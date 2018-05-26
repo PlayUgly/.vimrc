@@ -1,40 +1,57 @@
-set nocompatible
+"Install someday:
+"Ack
+"SnipMate
+"NerdCommenter
+
+"Most of these settings are from http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
 filetype plugin indent on
-filetype off
-filetype plugin on
-filetype indent on
 
-syntax enable
+set nocompatible
 
-packadd! matchit
+set modelines=0
 
 set tabstop=4
 set shiftwidth=4
-set softtabstop=0 noexpandtab
-set smarttab
-set omnifunc=syntaxcomplete#Complete
-set relativenumber
+set softtabstop=4 
+set expandtab
+"set smarttab
 
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+set number relativenumber
+set undofile
 
-
-
-nnoremap <SPACE> <Nop>	
 let mapleader = " "
+nnoremap <SPACE> <Nop>	
 
-inoremap {{ <Esc>o{<CR><CR>}<CR><Up><UP><TAB>
-nnoremap {{ <Esc>o{<CR><CR>}<CR><Up><UP><TAB>
+"improve search
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader>n :noh<cr>
 
-nnoremap <Leader>if iif ()<left>
-nnoremap <Leader>eif ielse if ()<left>
-nnoremap <Leader>el ielse
-nnoremap <Leader>wh iwhile()<left>
-
-inoremap ;; <Esc>Ea
-
-inoremap AA <Esc>A
-inoremap II <Esc>I
-inoremap CC <Esc>C
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+"set colorcolumn=230
 
 "map arrows to resize window
 "http://coderoncode.com/tools/2017/04/16/vim-the-perfect-ide.html
@@ -42,6 +59,54 @@ nnoremap <Up>		:resize +2<CR>
 nnoremap <Down>		:resize -2<CR>
 nnoremap <Left>		:vertical resize +2<CR>
 nnoremap <Right>	:vertical resize +2<CR>
+
+inoremap <Up>       <C-p>
+inoremap <Down>     <C-n>
+inoremap <Left>     <nop>
+inoremap <Right>    <nop>
+
+nnoremap j gj
+nnoremap k gk
+
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+au FocusLost * :wa
+
+"split windows
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>h <C-w>s<C-w>j
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+syntax enable
+
+packadd! matchit
+
+set omnifunc=syntaxcomplete#Complete
+
+
+
+
+inoremap {{ <ESC>o{<CR><CR>}<CR><Up><UP><TAB>
+nnoremap {{ <ESC>o{<CR><CR>}<CR><Up><UP><TAB>
+
+nnoremap <Leader>if iif ()<left>
+nnoremap <Leader>eif ielse if ()<left>
+nnoremap <Leader>el ielse
+nnoremap <Leader>wh iwhile()<left>
+
+inoremap ;; <ESC>Ea
+
+inoremap ii <ESC>
+
+inoremap AA <ESC>A
+inoremap II <ESC>I
+inoremap CC <ESC>C
 
 
 
@@ -57,29 +122,28 @@ Plugin 'VundleVim/Vundle.vim'
 
 "neocomplete
 Plugin 'shougo/neocomplete.vim'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
 
 "vim autoclose close ", (, [, {, etc
 Plugin 'townk/vim-autoclose'
 
 "easytags
-"Plugin 'xolox/vim-easytags'
-
-"YouCompleteMe code completion plugin
-"Plugin 'valloric/youcompleteme'
+Plugin 'xolox/vim-easytags'
 
 "solarized color theme
 "Plugin 'altercation/vim-colors-solarized'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+"run :source %, :PluginInstall to install new plugins
+"run "PluginClean to uninstall and delete plugin directory
+
 
 
 "vim plugins installed from Arch repository
 "vim-surround
 "vim-nerdtree
 "vim-tagbar
-
-"run :source %, :PluginInstall to install new plugins
-"run "PluginClean to uninstall and delete plugin directory
 
 
 
