@@ -1,6 +1,5 @@
 "Install someday:
 "Ack
-"SnipMate
 "NerdCommenter
 
 "Most of these settings are from http://stevelosh.com/blog/2010/09/coming-home-to-vim/
@@ -26,7 +25,7 @@ set hidden
 set wildmenu
 set wildmode=list:longest
 set visualbell
-set cursorline
+"set cursorline
 set ttyfast
 set ruler
 set backspace=indent,eol,start
@@ -49,7 +48,7 @@ set hlsearch
 nnoremap <leader>n :noh<cr>
 
 set wrap
-set textwidth=79
+"set textwidth=79
 set formatoptions=qrn1
 "set colorcolumn=230
 
@@ -57,7 +56,7 @@ set formatoptions=qrn1
 "http://coderoncode.com/tools/2017/04/16/vim-the-perfect-ide.html
 nnoremap <Up>		:resize +2<CR>	
 nnoremap <Down>		:resize -2<CR>
-nnoremap <Left>		:vertical resize +2<CR>
+nnoremap <Left>		:vertical resize -2<CR>
 nnoremap <Right>	:vertical resize +2<CR>
 
 inoremap <Up>       <C-p>
@@ -71,6 +70,8 @@ nnoremap k gk
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+nnoremap <F8> :TagbarToggle<CR>
 
 au FocusLost * :wa
 
@@ -94,11 +95,6 @@ set omnifunc=syntaxcomplete#Complete
 
 inoremap {{ <ESC>o{<CR><CR>}<CR><Up><UP><TAB>
 nnoremap {{ <ESC>o{<CR><CR>}<CR><Up><UP><TAB>
-
-nnoremap <Leader>if iif ()<left>
-nnoremap <Leader>eif ielse if ()<left>
-nnoremap <Leader>el ielse
-nnoremap <Leader>wh iwhile()<left>
 
 inoremap ;; <ESC>Ea
 
@@ -128,6 +124,17 @@ Plugin 'townk/vim-autoclose'
 
 "easytags
 Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
+
+"SnipMate
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+"Plugin 'honza/vim-snippets'
+
+"UltiSnips
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 "solarized color theme
 "Plugin 'altercation/vim-colors-solarized'
@@ -147,7 +154,7 @@ call vundle#end()            " required
 
 
 
-
+"
 "Customize vim autoclose
 "from https://github.com/Townk/vim-autoclose/commit/2b5dd857113ad84e4746e03590a6680e72f87d78
 "let g:AutoClosePairs_add = "<>"
@@ -235,6 +242,12 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+"http://vim.wikia.com/wiki/VimTip1386
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
@@ -246,3 +259,7 @@ endif
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+"UltiSnip variables
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir="~/.vim/vic-snippets"
