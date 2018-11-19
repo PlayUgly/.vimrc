@@ -122,16 +122,6 @@ Plugin 'shougo/neocomplete.vim'
 "vim autoclose close ", (, [, {, etc
 Plugin 'townk/vim-autoclose'
 
-"easytags
-Plugin 'xolox/vim-easytags'
-Plugin 'xolox/vim-misc'
-
-"SnipMate
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'garbas/vim-snipmate'
-"Plugin 'honza/vim-snippets'
-
 "UltiSnips
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -143,14 +133,17 @@ Plugin 'honza/vim-snippets'
 call vundle#end()            " required
 
 "run :source %, :PluginInstall to install new plugins
-"run "PluginClean to uninstall and delete plugin directory
+"run ":PluginClean to uninstall and delete plugin directory
 
 
 
 "vim plugins installed from Arch repository
-"vim-surround
+"vim-airline
 "vim-nerdtree
+"vim-ragtag
+"vim-surround
 "vim-tagbar
+"easytag
 
 
 
