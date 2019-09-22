@@ -93,18 +93,24 @@ set omnifunc=syntaxcomplete#Complete
 
 
 
-inoremap {{ <ESC>o{<CR><CR>}<CR><Up><UP><TAB>
-nnoremap {{ <ESC>o{<CR><CR>}<CR><Up><UP><TAB>
+inoremap {{ {<CR><CR>}<CR><Up><UP><TAB>
+nnoremap {{ {<CR><CR>}<CR><Up><UP><TAB>
 
 inoremap ;; <ESC>Ea
 
 inoremap ii <ESC>
+nnoremap ii <ESC>
 
 inoremap AA <ESC>A
 inoremap II <ESC>I
 inoremap CC <ESC>C
 
 
+nnoremap <Tab>      >>
+nnoremap <S-Tab>    <<
+
+
+nnoremap Q @q
 
 
 " set the runtime path to include Vundle and initialize
