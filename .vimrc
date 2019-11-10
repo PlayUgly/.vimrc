@@ -149,7 +149,6 @@ call vundle#end()            " required
 "vim-ragtag
 "vim-surround
 "vim-tagbar
-"easytag
 
 
 
@@ -263,3 +262,6 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir="~/.vim/vic-snippets"
 let g:UltiSnipsSnippetDirectories=["vic-snippets", "UltiSnips"]
+
+"Tagbar setup
+let g:tagbar_width = 80
