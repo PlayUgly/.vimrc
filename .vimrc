@@ -71,9 +71,9 @@ inoremap <F1> :w<CR>
 nnoremap <F1> :w<CR>
 vnoremap <F1> :w<CR>
 
-inoremap <F5> :!. make-only<CR>
-nnoremap <F5> :!. make-only<CR>
-vnoremap <F5> :!. make-only<CR>
+inoremap <F6> :!. make-only<CR>
+nnoremap <F6> :!. make-only<CR>
+vnoremap <F6> :!. make-only<CR>
 
 inoremap <F7> :!. run-test<CR>
 nnoremap <F7> :!. run-test<CR>
