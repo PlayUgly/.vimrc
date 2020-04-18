@@ -268,8 +268,8 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 "UltiSnip variables
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetsDir="~/.vim/vic-snippets"
-let g:UltiSnipsSnippetDirectories=["vic-snippets", "UltiSnips"]
+let g:UltiSnipsSnippetsDir="~/.vim/bundle/vic-snippets"
+let g:UltiSnipsSnippetDirectories=["bundle/vic-snippets", "UltiSnips"]
 
 "Tagbar setup
 let g:tagbar_width = 80
